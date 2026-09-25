@@ -1,0 +1,6 @@
+@DictionaryProvider.Api_HostAddress = http://localhost:5019
+
+GET {{DictionaryProvider.Api_HostAddress}}/api/dictionary/bad
+Accept: application/json
+
+###
