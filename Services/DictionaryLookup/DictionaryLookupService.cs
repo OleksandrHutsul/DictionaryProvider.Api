@@ -49,6 +49,14 @@ public class DictionaryLookupService : IDictionaryLookupService
             .Where(suggestion => IsPhraseMatch(candidate, suggestion.Word))
             .ToList();
 
+        foreach (var suggestion in matches)
+        {
+            entry = await _dictionaryService.GetSuggestionAsync(suggestion, cancellationToken);
+
+            if (entry is not null)
+                return (entry, []);
+        }
+
         return (null, matches);
     }
 
