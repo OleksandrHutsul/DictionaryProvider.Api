@@ -96,7 +96,7 @@ builder.Services.AddCors(options =>
                 "http://localhost:5087",
                 "https://localhost:7260",
                 "http://localhost:5231",
-                "https://lexi-flow-chi.vercel.app")
+                "https://lexi-flow-plum.vercel.app")
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
