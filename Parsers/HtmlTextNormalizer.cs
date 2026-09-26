@@ -1,7 +1,7 @@
+using System.Net;
 using DictionaryProvider.Api.Configuration;
 using HtmlAgilityPack;
 using Microsoft.Extensions.Options;
-using System.Net;
 
 namespace DictionaryProvider.Api.Parsers;
 
@@ -32,7 +32,7 @@ public class HtmlTextNormalizer
     {
         if (string.IsNullOrWhiteSpace(value)) return null;
 
-        if (Uri.TryCreate(value, UriKind.Absolute, out var absoluteUri))
+        if (Uri.TryCreate(value, UriKind.Absolute, out var absoluteUri) && (absoluteUri.Scheme == Uri.UriSchemeHttp || absoluteUri.Scheme == Uri.UriSchemeHttps))
             return absoluteUri.ToString();
 
         return Uri.TryCreate(_cambridgeUri, value, out var uri)
