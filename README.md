@@ -6,6 +6,11 @@ DictionaryProvider.Api fetches English dictionary pages, parses them into a stab
 
 Dictionary data comes from Cambridge Dictionary HTML pages plus the Cambridge autocomplete endpoint. Photo translation uses OCR.space for recognition and translates the recognized English text into Ukrainian.
 
+### Project links
+
+- **Live application:** https://lexi-flow-plum.vercel.app/
+- **Frontend:** [LexiFlow](https://github.com/OleksandrHutsul/LexiFlow)
+
 ## What the API provides
 
 **Dictionary lookup**
